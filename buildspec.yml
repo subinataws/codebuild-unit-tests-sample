@@ -18,10 +18,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ant		  
+      #- ant		  
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
     files:
-      - build/jar/HelloWorld.jar
+      #- build/jar/HelloWorld.jar
