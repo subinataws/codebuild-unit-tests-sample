@@ -1,27 +1,28 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo Installing JFrog CLI
-      - curl -fL https://getcli.jfrog.io | sh
-      - ./jfrog --version
-      - echo Downloading JUnit JAR file...
-      - mkdir lib
-      - wget http://central.maven.org/maven2/junit/junit/4.10/junit-4.10.jar -O ./lib/junit-4.10.jar
-  pre_build:
-    commands:
-      - echo Creating directories...
-      - mkdir build
-      - mkdir build/classes
-      - mkdir build/jar           		  
+  #install:
+    #commands:
+      #- echo Installing JFrog CLI
+      #- curl -fL https://getcli.jfrog.io | sh
+      #- ./jfrog --version
+      #- echo Downloading JUnit JAR file...
+      #- mkdir lib
+      #- wget http://central.maven.org/maven2/junit/junit/4.10/junit-4.10.jar -O ./lib/junit-4.10.jar
+  #pre_build:
+    #commands:
+      #- echo Creating directories...
+      #- mkdir build
+      #- mkdir build/classes
+      #- mkdir build/jar           		  
   build:
     commands:
       - echo Build started on `date`
+      - nohup nice -n -5 ls / > out.txt &
       #- ant		  
-  post_build:
-    commands:
-      - echo Build completed on `date`
+  #post_build:
+    #commands:
+      #- echo Build completed on `date`
 #artifacts:
     #files:
       #- build/jar/HelloWorld.jar
